@@ -1,0 +1,112 @@
+.uppercase {
+    text-transform: uppercase;
+}
+
+nav {
+	background-color: #444;
+	color: #e5e5e5;
+}
+nav ul {
+	padding: 10px;
+	display: block;
+	width: 100%;
+}
+nav ul li {
+	padding: 5px;
+	display: inline-block;
+}
+.menu-icon {
+	height: 50px;
+	width: auto;
+}
+
+
+.pop-over {
+	background-color: #fff;
+	width: fit-content;
+	min-width: 250px;
+	max-width: 40%;
+	max-height: calc(100% - 100px);
+	overflow: auto;
+	position: absolute;
+	right: 0;
+	top: 59px;
+	border-left: 1px solid rgba(130, 127, 127, 0.2);
+	box-shadow: 5px 5px rgba(130, 127, 127, 0.2);
+}
+
+@media (max-width: 375px) {
+    .pop-over {
+        max-width: 85%;
+    }
+}
+
+.pop-over-header {
+	min-height:20px;
+	display: block;
+	padding: 20px 20px 0px 20px;
+}
+.pop-over-title {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 80%;
+	font-weight: bold;
+}
+.pop-over-close {
+	display: inline-block;
+	width: 10%;
+	float: right;
+	cursor: pointer;
+	color: rgba(130, 127, 127, 0.5);
+}
+.pop-over-body {
+	height: fit-content;
+}
+div.help {
+	padding: 0px 20px 20px 20px;
+}
+.pop-over-body ul li {
+	padding: 5px 0px;
+}
+
+ul.links li:first-child {
+	border-top: 1px solid rgba(130, 127, 127, 0.2);
+}
+ul.links li {
+	border-bottom: 1px solid rgba(130, 127, 127, 0.2);
+	padding: 10px 20px;
+}
+ul.links a {
+	font-weight: bold;
+	color: #387ef5;
+}
+ul a {
+	text-decoration: none;
+	color: #000;
+}
+.links a.link-icon {
+	float: right;
+	color: rgba(130, 127, 127, 0.5);
+}
+
+.search-field {
+	position: relative;
+	margin: 0px;
+	margin-bottom: 20px;
+}
+.search-field input {
+	border: 1px solid rgba(130, 127, 127, 0.2);
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+}
+.search-field .search-icon {
+	position: absolute;
+	left: 5px;
+	top: calc(50% - 12px);
+	color: rgba(130, 127, 127, 0.5);
+}
+.dummy-content {
+	padding: 20px;
+	text-align: justify;
+}
