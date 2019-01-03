@@ -1,36 +1,23 @@
 angular.module('starter', ['ionic'])
-.controller('mainCtrl', function($scope) {
+.controller('mainCtrl', function($scope, $http) {
     $scope.popOverShown = false;
     
     $scope.showPopOver = function() {
-        $scope.popOverShown = true;
+      $scope.popOverShown = true;
+      $scope.sugestions = [];
+      $http({
+        method : "GET",
+        url : "http://jsonplaceholder.typicode.com/comments"
+      }).then(function success(response) {
+          $scope.sugestions = response.data.slice(0, 4);
+        }, function error(response) {
+          $scope.sugestions.push({"body": response.statusText});
+      });
     };
 
     $scope.hidePopOver = function() {
         $scope.popOverShown = false;
-    };
-})
-.directive("menuBar", function() {
-    return {
-        restrict: 'A',
-        transclude: true,
-        link: function(scope, element, attrs) {
-        },
-        templateUrl: 'menu-bar.html'
-    }
-})
-.directive("menuItem", function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            var html = '';
-            if(attrs.icon != undefined)
-              html += '<img class = "menu-icon" src = "' + attrs.icon + '"</img>';
-            if(attrs.name != undefined)
-              html += attrs.name;
-            element.html(html);
-        }
-    }
+    };    
 })
 .directive("popOver", function() {
     return {

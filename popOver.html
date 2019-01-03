@@ -11,10 +11,8 @@
 			</div>
 			<h4 class = "uppercase">Suggested</h4>
 			<ul>
-				<li><a ng-href = "#" target = "_blank">How can I change the value of a deal in the Detail View?</a></li>
-				<li><a ng-href = "#" target = "_blank">Can I remove word "deal" from the deal titles?</a></li>
-				<li><a ng-href = "#" target = "_blank">How can I duplicate a deal?</a></li>
-				<li><a ng-href = "#" target = "_blank">How can I restore deleted deals?</a></li>
+				<li ng-if="!sugestions.length"><i class="material-icons md-18 rotate">autorenew</i></li>
+				<li ng-if="!!sugestions.length" ng-repeat = "s in sugestions"><a ng-href = "#" target = "_blank">{{s.body}}</a></li>
 			</ul>
 		</div>
 		<ul class = "links">
